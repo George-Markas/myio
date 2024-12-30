@@ -1,13 +1,13 @@
-#ifndef MYIO_H
-#define MYIO_H
+#ifndef MYUTILS_H
+#define MYUTILS_H
 
 int input_sanitizer(const char *buffer, int allow_negative, int allow_float);
 int read_int(int *var, ...);
 int read_float(float *var, ...);
 
-#endif // MYIO_H
+#endif // MYUTILS_H
 
-#ifdef MYIO_IMPLEMENTATION
+#ifdef MYUTILS_IMPLEMENTATION
 #include <string.h>
 #include <ctype.h>
 
@@ -77,7 +77,7 @@ inline int read_int(int* var, ...) {
         va_end(args);
 
         while (!input_sanitizer(buffer, allow_negative, 0)) {
-            printf("\n\033[3;31mMust be a%s integer! Retry...\033[0m\n", str);
+            fprintf(stderr, "\n\033[3;31mMust be a%s integer! Retry...\033[0m\n", str);
             fgets(buffer, BUFFER_SIZE, stdin);
         }
     }
@@ -112,7 +112,7 @@ inline int read_float(float* var, ...) {
         va_end(args);
 
         while (!input_sanitizer(buffer, allow_negative, 1)) {
-            printf("\n\033[3;31mMust be a%sloat! Retry...\033[0m\n", str);
+            fprintf(stderr, "\n\033[3;31mMust be a%sloat! Retry...\033[0m\n", str);
             fgets(buffer, BUFFER_SIZE, stdin);
         }
     }
@@ -122,4 +122,4 @@ inline int read_float(float* var, ...) {
     return EXIT_SUCCESS;
 }
 
-#endif // MYIO_IMPLEMENTATION
+#endif // MYUTILS_IMPLEMENTATION

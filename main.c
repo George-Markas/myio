@@ -1,6 +1,6 @@
-// myio demo
-#define MYIO_IMPLEMENTATION
-#include "myio.h"
+// demo
+#define MYUTILS_IMPLEMENTATION
+#include "myutils.h"
 
 int main(void) {
     int an_int;
