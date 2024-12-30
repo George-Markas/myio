@@ -34,12 +34,10 @@ inline int input_sanitizer(const char *buffer, int allow_negative, int allow_flo
         return 0;
 
     for(; buffer[i] != '\n'; i++) {
-        if(allow_float) {
+        #define FLOAT_CHECK
+        if(allow_float)
             #define FLOAT_CHECK && (buffer[i] != 0x2e) // 0x2e = '.'
-        }
-        else
-            #define FLOAT_CHECK
-
+        
         if(!isdigit(buffer[i]) FLOAT_CHECK)
             return 0;
     }
