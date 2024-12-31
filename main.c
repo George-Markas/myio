@@ -1,7 +1,7 @@
-// demo
 #define MYUTILS_IMPLEMENTATION
 #include "myutils.h"
 
+/* Demo */
 int main(void) {
     int an_int;
     float a_float;
