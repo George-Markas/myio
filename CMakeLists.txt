@@ -8,7 +8,7 @@ set(SOURCES
 )
 
 set(HEADERS
-    myio.h
+    myutils.h
 )
 
 add_executable(${PROJECT_NAME} ${SOURCES} ${HEADERS})
