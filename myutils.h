@@ -13,6 +13,8 @@ int read_float(float *var, ...);
 
 /**
  * @brief Provides checks for non-numerics and negatives if validity_check_enabled is true.
+ *
+ * int input_sanitizer(const char *buffer, const int allow_negative, const int allow_float)
  */
 inline int input_sanitizer(const char *buffer, const int allow_negative, const int allow_float) {
     // In case of empty input, even if NULL macro is not defined
